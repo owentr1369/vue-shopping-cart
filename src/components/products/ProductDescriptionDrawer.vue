@@ -29,7 +29,7 @@ export default {
   props: ["product", "active"],
   computed: {
     product_total() {
-      return 5;
+      return this.$store.getters.productQuantity(this.product);
     },
   },
 };
