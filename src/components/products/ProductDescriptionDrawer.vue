@@ -5,7 +5,7 @@
       :class="{ show: active }"
       @click="$emit('close-product-drawer')"
     />
-    <div class="drawer" :show="{ show: active }">
+    <div class="drawer" :class="{ show: active }">
       <div class="drawer-close" @click="$emit('close-product-drawer')">X</div>
       <div v-if="product" class="product-details">
         <h3 class="text-center">{{ product.name }}</h3>
@@ -29,7 +29,7 @@ export default {
   props: ["product", "active"],
   computed: {
     product_total() {
-      return 56.0;
+      return 5;
     },
   },
 };
@@ -82,7 +82,7 @@ export default {
     background-color: lightgray;
   }
 }
-.product-detail {
+.product-details {
   display: flex;
   justify-content: center;
   flex-direction: column;

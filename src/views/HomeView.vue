@@ -4,6 +4,7 @@
       <ProductDescriptionDrawer
         :product="product"
         :active="active.product_drawer"
+        v-on:close-product-drawer="closeProductDrawer"
       />
       <ProductSummaryCard
         v-for="product in items"
@@ -35,7 +36,11 @@ export default {
   methods: {
     viewProduct(product) {
       this.product = product;
+      this.active.product_drawer = true;
       console.log(this.product);
+    },
+    closeProductDrawer() {
+      this.active.product_drawer = false;
     },
   },
 };
