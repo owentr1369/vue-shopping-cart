@@ -5,7 +5,11 @@
 </template>
 
 <script>
+import items from "../data/data";
 export default {
   name: "HomeView",
+  data() {
+    return { items };
+  },
 };
 </script>
