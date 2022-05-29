@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link :class="{ active: $route.name === 'home' }" to="/"
+        >Home</router-link
+      >
+      |
+      <router-link :class="{ active: $route.name === 'cart' }" to="/cart"
+        >Cart</router-link
+      >
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -16,17 +21,35 @@
   text-align: center;
   color: #2c3e50;
 }
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body {
+  background-color: rgba(245, 245, 245, 1);
+}
 nav {
-  padding: 30px;
-
+  padding: 10px;
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  line-height: 30px;
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: darkgray;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 1.25rem;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    &.active {
+      color: #2c3e50;
     }
   }
+}
+.text-center {
+  text-align: center;
 }
 </style>
