@@ -27,6 +27,23 @@ export default new Vuex.Store({
       }
       updateLocalStorage(state.cart);
     },
+    removeFromCart(state, product) {
+      let item = state.cart.find((i) => i.id === product.id);
+      if (item) {
+        if (item.quantity > 1) {
+          item.quantity--;
+        } else {
+          state.cart = state.cart.filter((i) => i.id !== product);
+        }
+      }
+      updateLocalStorage(state.cart);
+    },
+    updateCartFromLocalStorage(state) {
+      const cart = localStorage.getItem("cart");
+      if (cart) {
+        state.cart = JSON.parse(cart);
+      }
+    },
   },
   actions: {},
   modules: {},

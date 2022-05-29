@@ -16,7 +16,7 @@
           <h4>{{ product_total }}</h4>
         </div>
         <div class="button-container">
-          <button class="remove">Remove</button>
+          <button @click="removeFromCart" class="remove">Remove</button>
           <button @click="addToCart" class="add">Add</button>
         </div>
       </div>
