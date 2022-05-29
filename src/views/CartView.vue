@@ -6,14 +6,16 @@
       :key="product.id"
       :product="product"
     />
+    <CartSummaryPaymentCard />
   </div>
 </template>
 
 <script>
 import CartItemCard from "../components/cart/CartItemCard.vue";
+import CartSummaryPaymentCard from "../components/cart/CartSummaryPaymentCard.vue";
 export default {
   name: "CartView",
-  components: { CartItemCard },
+  components: { CartItemCard, CartSummaryPaymentCard },
   computed: {
     items() {
       return this.$store.getters.cartItems;
